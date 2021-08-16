@@ -99,7 +99,9 @@ public final class PluginClassLoader extends URLClassLoader {
             try {
                 Method method = parent.getClass().getDeclaredMethod("addChild", ClassLoader.class);
                 method.invoke(parent, this);
-            } catch(Exception ignored) {}
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
         }
         // Magma end
     }
